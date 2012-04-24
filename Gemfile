@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.1'
+gem 'rails', '3.2.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -36,3 +36,12 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+gem 'therubyracer'
+gem 'mongoid'
+gem 'bson_ext'
+gem 'fastercsv'
+gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem "devise"
+gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
+gem 'modal-me', git: 'git@github.com:isieo/modal-me.git'

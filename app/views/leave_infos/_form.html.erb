@@ -1,0 +1,12 @@
+<%= simple_form_for(@leave_info, :html => { :class => "form-horizontal"}) do |f| %>
+  <%= f.error_notification %>
+  
+  <%= f.input :leave_type %>
+  <%= f.input :granted_leave %>
+  <%= f.input :remaining_leave %>
+
+  <div class="form-actions">
+    <%= f.submit "Submit", :class => "btn-primary"%>
+    <%= link_to 'Back', leave_infos_path, :class => "btn" %>
+  </div>
+<% end %>

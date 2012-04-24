@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  leave_type: MyString
+  granted_leave: 1
+  remaining_leave: 1
+
+two:
+  leave_type: MyString
+  granted_leave: 1
+  remaining_leave: 1

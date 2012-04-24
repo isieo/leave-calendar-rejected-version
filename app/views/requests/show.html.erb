@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Start date:</b>
+  <%= @request.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @request.end_date %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @request.type %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @request.comment %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @request.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>

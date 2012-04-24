@@ -1,0 +1,12 @@
+<%= simple_form_for(@organization) do |f| %>
+  <%= f.error_notification %>
+  
+  <%= f.input :name %>
+  <%= f.input :subdomain %>
+  <%= f.input :department %>
+  
+  <div class="form-actions">
+    <%= f.submit "Submit", :class => "btn-primary"%>
+    <%= link_to 'Back', organizations_path, :class => "btn" %>
+  </div>
+<% end %>

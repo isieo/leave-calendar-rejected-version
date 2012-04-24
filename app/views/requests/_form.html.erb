@@ -1,0 +1,18 @@
+<%= simple_form_for(@request, :html => { :class => "form-horizontal"}) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :start_date, :input_html => { :class => "datepickers" } %>
+  <%= f.input :end_date, :input_html => { :class => "datepickers" } %>
+  <%= f.input :type, :collection => ["Annual","Medical","Overtime"], :selected => ["Annual"] %>
+  <%= f.input :comment %>
+   
+  <div class="form-actions">
+    <%= f.submit "Submit", :class => "btn-primary"%>
+    <%= link_to 'Back', requests_path, :class => "btn" %>
+  </div>
+<% end %>
+
+
+
+
+

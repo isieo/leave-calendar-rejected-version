@@ -1,0 +1,17 @@
+<h1>Your leave informations</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Leave type</th>
+    <th>Granted leave</th>
+    <th>Remaining leave</th>
+  </tr>
+
+<% @leave_infos.each do |leave_info| %>
+  <tr>
+    <td><%= leave_info.leave_type %></td>
+    <td><%= leave_info.granted_leave %></td>
+    <td><%= leave_info.remaining_leave %></td>
+  </tr>
+<% end %>
+</table>

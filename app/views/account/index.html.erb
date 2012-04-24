@@ -1,0 +1,61 @@
+<%if @user != nil%>
+  <h1>Details for <%=@user.name%></h1>
+
+  <table class="table table-condensed">
+    <tr>
+      <td><b>Name</b></td>
+      <td><%=@user.name%></td>
+    </tr>
+    <tr>
+      <td><b>E-mail</b></td>
+      <td><%=@user.email%></td>
+    </tr>
+    <tr>
+      <td><b>Department</b></td>
+      <td><%=@user.in_department*","%></td>
+    </tr>
+    <tr>
+      <td><b>Head of</b></td>
+      <td><%=@user.department_head_of*","%></td>
+    </tr>
+  </table>
+  <br/>
+  <h2>Request List</h2>
+  <table class="table table-condensed">
+    <tr>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Type</th>
+      <th>Comment</th>
+      <th>Status</th>
+    </tr>
+    <% @request.each do |re| %>
+    <tr>
+      <td><%=re.start_date.to_date%></td>
+      <td><%=re.end_date.to_date%></td>
+      <td><%=re.type%></td>
+      <td><%=re.comment%></td>
+      <td><%=re.status%></td>
+    </tr>
+    <% end %>
+  </table>
+
+  <br/>
+  <h2>Leave Information</h2>
+  <table class="table table-condensed">
+    <tr>
+      <th>Type</th>
+      <th>Granted</th>
+      <th>Remaining</th>
+    </tr>
+    <% @leave_info.each do |li| %>
+    <tr>
+      <td><%=li.leave_type%></td>
+      <td><%=li.granted_leave%></td>
+      <td><%=li.remaining_leave%></td>
+    </tr>
+    <% end %>
+  </table>
+<%end%>
+<%= my_calendar_overall(:date=>@date) %>
+

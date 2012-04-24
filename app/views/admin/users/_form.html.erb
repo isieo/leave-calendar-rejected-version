@@ -1,0 +1,22 @@
+<%= simple_form_for(@user,:url => admin_users_path, :html => {:class => "form-horizontal"}) do |f| %>
+  <%= f.error_notification %>
+  
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+  
+  <% department_array_duplicate = [] %>
+  <% current_user.organization.department.each do |d|  %>
+    <% department_array_duplicate << ([d]*2)%>
+  <% end %>
+  
+  <%= f.input :in_department, :collection => department_array_duplicate, :as => :check_boxes, :label => 'Departments' %>
+  <%= f.input :department_head_of, :collection => department_array_duplicate, :as => :check_boxes, :label => 'Head of Department'  %>
+  
+  <%= f.input :authority_level, :collection => ["Admin","Manager","User"], :selected => ["User"] %>
+  <div class="form-actions">
+    <%= f.submit "Submit", :class => "btn-primary"%>
+    <%= link_to 'Back', requests_path, :class => "btn" %>
+  </div>
+<% end %>

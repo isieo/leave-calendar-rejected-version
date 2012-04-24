@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Leave type:</b>
+  <%= @leave_info.leave_type %>
+</p>
+
+<p>
+  <b>Granted leave:</b>
+  <%= @leave_info.granted_leave %>
+</p>
+
+<p>
+  <b>Remaining leave:</b>
+  <%= @leave_info.remaining_leave %>
+</p>
+
+
+<%= link_to 'Edit', edit_leave_info_path(@leave_info) %> |
+<%= link_to 'Back', leave_infos_path %>

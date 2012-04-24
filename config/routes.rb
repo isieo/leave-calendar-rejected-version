@@ -1,4 +1,27 @@
 LeaveCalendar::Application.routes.draw do
+
+  resources :organizations
+  resources :leave_infos
+  devise_for :users, :controllers => { :sessions => "admins/sessions" }
+  
+  match "account" => "account#index"
+  resources :requests do
+    get "cancellation"
+    put "cancel"
+    get "approving"
+    put "approve"
+    get "rejecting"
+    put "reject"
+  end
+
+  match "admin", to: "admin#index"
+  namespace :admin do
+    resources :users
+  end
+    
+  match '', to: 'welcome#index', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
+
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,8 +71,8 @@ LeaveCalendar::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
-
+   root :to => 'welcome#index'
+   
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

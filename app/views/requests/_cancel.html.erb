@@ -1,0 +1,19 @@
+Are you sure?
+<%= simple_form_for(@request,:url => request_cancel_path(@request), :html => { :class => "form-horizontal"}) do |f| %>
+  <%= f.error_notification %>
+  <%= f.hidden_field :cancel, :value => 1%>
+  
+  <div class="form-actions">
+    <%= f.submit "Yes", :class => "btn-primary"%>
+    <a class="btn" data-dismiss="modal" href="#">Cancel</a>
+  </div>
+<% end %>
+
+
+
+
+
+
+
+
+

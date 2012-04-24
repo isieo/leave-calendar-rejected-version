@@ -1,0 +1,14 @@
+<%# my_redirect if request.subdomain == "" %>
+<div class="horizontal_list">
+  <ul>
+    <li><%= link_to "I am sick", new_request_path(:comment => "I am sick", :type => "Medical"), :class => "btn" %></li>
+    <li><%= link_to "I am taking leave", new_request_path(:comment => "I am taking leave", :type => "Annual"), :class => "btn" %></li>
+    <li><%= link_to "I am working overtime", new_request_path(:comment => "I am working overtime", :type => "Overtime" ), :class => "btn" %></li>
+  </ul>
+</div>
+
+<%= my_calendar(:first_date_of_month=>@first_date_of_month,
+                  :weeks_count=> @weeks_count,
+                  :days_count=>@days_count,
+                  :end_of_month=>@end_of_month,
+                  :date_buffer=>@date_buffer)%>

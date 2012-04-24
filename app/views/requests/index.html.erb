@@ -1,0 +1,33 @@
+<h1>Listing requests</h1>
+
+<table class = "table table-striped">
+  <tr>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Type</th>
+    <th>Comment</th>
+    <th>Status</th>
+    <th></th>
+  </tr>
+
+<% @requests.each do |request| %>
+  
+  <tr>
+    <td><%= request.start_date.to_date %></td>
+    <td><%= request.end_date.to_date %></td>
+    <td><%= request.type %></td>
+    <td><%= request.comment %></td>
+    <td><%= request.status %></td>
+    
+    <td><%= modal_me_to 'Cancel', request_cancellation_path(request), {:class=>'btn btn-danger'}, "Cancel My Request" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Request', new_request_path, :class => "btn btn-primary" %>
+
+
+
+
