@@ -30,8 +30,8 @@ puts user_leave_info.save
 
 user_request = user.requests.find_or_create_by(comment: "Vacation in Genting")
 user_request.organization = orga
-user_request.start_date = "2012-03-03"
-user_request.end_date = "2012-03-06"
+user_request.start_date = "2012-06-03"
+user_request.end_date = "2012-06-06"
 user_request.comment = "Taking a break in Genting"
 user_request.type = "Annual"
 user_request.status = "Pending"
@@ -39,8 +39,8 @@ puts user_request.save
 
 user_request = user.requests.find_or_create_by(comment: "Vacation in Osaka")
 user_request.organization = orga
-user_request.start_date = "2012-04-04"
-user_request.end_date = "2012-04-09"
+user_request.start_date = "2012-07-04"
+user_request.end_date = "2012-07-09"
 user_request.comment = "Business Trip in Osaka"
 user_request.type = "Annual"
 user_request.status = "Pending"

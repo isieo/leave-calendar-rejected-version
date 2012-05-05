@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+  before_filter :load_organization
    def index
     @first_date_of_month = params[:month] ? Date.parse(params[:month]) : Date.today.at_beginning_of_month
     @weeks_count = 5

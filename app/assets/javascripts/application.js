@@ -11,9 +11,9 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require modal_me
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require modal_me
 //= require_tree .
 
 

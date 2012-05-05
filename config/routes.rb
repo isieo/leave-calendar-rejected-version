@@ -2,7 +2,7 @@ LeaveCalendar::Application.routes.draw do
 
   resources :organizations
   resources :leave_infos
-  devise_for :users, :controllers => { :sessions => "admins/sessions" }
+  devise_for :users, :controllers => { :sessions => "admin/sessions" }
   
   match "account" => "account#index"
   resources :requests do
